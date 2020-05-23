@@ -24,9 +24,11 @@ Compiling and flashing to target:
 
 
 ```
-$ mkdir -p example/build; cd example/build
+
+$ mkdir -p example/build
 $ cp STM32F103C8_CMakeLists.txt example/CMakeLists.txt
 $ cp STM32F103C8.ioc example/
+$ using STM32CubeMX to generate code:
 $ cd example/build
 $ cmake ..
 $ make
