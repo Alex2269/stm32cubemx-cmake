@@ -11,17 +11,13 @@ STM32CubeMX currently exports build files for a few embedded-centric IDEs, which
 
 *CMakeLists.txt* here is the only noteworthy file; the generated firmware source code is simply convenient for testing the build process. Using this script with other targets should be a matter of using STM32CubeMX to generate code for your target, changing some file paths, and adjusting your compiler/linker flags.
 
-# Running the Example Project
-
 Prerequisites:
 
 - Linux (OSX untested but should be usable)
 - GNU ARM toolchain (i.e. arm-none-eabi-gcc, etc. are available)
-- NUCLEO-F042K6 development board connected to USB
 - OpenOCD (and R/W permissions to the USB device)
 
 Compiling and flashing to target:
-
 
 ```
 
