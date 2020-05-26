@@ -58,15 +58,15 @@ add_custom_command(TARGET
 
 # Flash firmware to target.
 add_custom_target(flash
-  openocd -f interface/stlink-v2-1.cfg -c "transport select hla_swd"
+  openocd -f interface/stlink-v2.cfg -c "transport select hla_swd"
   -f target/stm32f1x.cfg -c "init" -c "reset halt"
   -c "flash write_image erase ${PROJ}.elf" -c "reset run" -c "shutdown"
   DEPENDS ${PROJ}.elf
   COMMENT "Flashing target hardware")
-
+  
 # Run OpenOCD as a GDB host.
 add_custom_target(gdbhost
-  openocd -f interface/stlink-v2-1.cfg -c "transport select hla_swd"
+  openocd -f interface/stlink-v2.cfg -c "transport select hla_swd"
   -f target/stm32f1x.cfg -c "init" -c "reset halt"
   DEPENDS ${PROJ}.elf
   COMMENT "Running OpenOCD as a GDB host.")
